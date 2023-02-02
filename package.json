@@ -1,0 +1,22 @@
+{
+  "name": "pcat",
+  "version": "1.0.0",
+  "description": "PCAT Photo App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akdeniz7/PCAT.git"
+  },
+  "author": "Ahmet Sezer Akdeniz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akdeniz7/PCAT/issues"
+  },
+  "homepage": "https://github.com/Akdeniz7/PCAT#readme",
+  "devDependencies": {
+    "prettier": "2.8.3"
+  }
+}
