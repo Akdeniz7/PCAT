@@ -10,10 +10,20 @@ const app = express();
 
 //Connect to DB
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://127.0.0.1/pcat-test-db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(
+    'mongodb+srv://Sezer:UFk0H2CAqwC6syUX@cluster0.nceqmxg.mongodb.net/pcat-db?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log('DB CONNECTED');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 //TEMPLATE ENGINE
 app.set('view engine', 'ejs');
@@ -40,7 +50,7 @@ app.get('/about', pageController.getAboutPage);
 app.get('/add', pageController.getAddPage);
 app.get('/photos/edit/:id', pageController.getEditPage);
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda başlatıldı`);
 });
